@@ -10,6 +10,7 @@
 1. [Created or Changed files in Layers](#created-or-changed-files-in-layers)
 1. [Enpoints](#endpoints)
 1. [ResponseBody](#responsebody)
+1. [GetAllSortedASC](#getallsortedasc)
 
 ## Created or Changed files in Layers
 
@@ -109,3 +110,45 @@
 |*`/api/Contacts/get`*|
 |:--:|
 |![Contact-Get](https://user-images.githubusercontent.com/54795142/121516816-4fed7800-c9f7-11eb-8aa9-14bf66d62bbf.PNG)|
+
+### GetAllSortedASC
+
+- ./UserProject/Business/Concrete/UserManager.cs
+
+```
+public List<User> GetAllSortedASC()
+        {
+            List<User> unsortedUsers = _userDal.GetAll();
+            User[] usersArray = GetAsArray(unsortedUsers);
+            // SelectionSort
+            for (int i = 0; i < usersArray.Length-1; i++)
+            {
+                // Find
+                int minIdx = i;
+                for (int j = i + 1; j < usersArray.Length; j++)
+                {
+                    int compareValueName = String.Compare(usersArray[j].Name, usersArray[minIdx].Name);
+                    if (compareValueName == -1)
+                    {
+                        minIdx = j;
+                    }
+
+                    if (compareValueName == 0)
+                    {
+                        int compareValueSurname = String.Compare(usersArray[j].Surname, usersArray[minIdx].Surname);
+                        if (compareValueSurname == -1)
+                        {
+                            minIdx = j;
+                        }
+                    }
+                }
+
+                // Swap
+                User temp = usersArray[minIdx];
+                usersArray[minIdx] = usersArray[i];
+                usersArray[i] = temp;
+            }
+
+            return usersArray.ToList();
+        }
+```
