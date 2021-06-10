@@ -1,5 +1,16 @@
 # UserProject
 
+1. git clone https://github.com/oguzhanoxel/UserProject.git
+2. open a project or solution on Visual Studio
+3. Set as Startup Project 'WebAPI'
+4. Run 'IIS Express'.
+
+**Contents**
+
+1. [Created or Changed files in Layers](#created-or-changed-files-in-layers)
+1. [Enpoints](#endpoints)
+1. [ResponseBody](#responsebody)
+
 ## Created or Changed files in Layers
 
 - Entities
@@ -50,9 +61,51 @@
 `/api/Users/updateimage`
 
 ### Contacts endpoints
-`/api/Users/getall`
-`/api/Users/get`
+`/api/Contacts/getallbyuser`
+`/api/Contacts/getall`
+`/api/Contacts/get`
 
-`/api/Users/add`
-`/api/Users/delete`
-`/api/Users/update`
+`/api/Contacts/add`
+`/api/Contacts/delete`
+`/api/Contacts/update`
+
+## ResponseBody
+
+### Post functions
+- All Post endpoints return => string: 'added.', 'updated.', 'deleted.'
+
+### Users
+
+|*`/api/Users/get`*|
+|:--:|
+|![User-Get](https://user-images.githubusercontent.com/54795142/121514344-9392b280-c9f4-11eb-9adf-0034354edfaa.PNG)|
+
+|*`/api/Users/getalljson`*|
+|:--:|
+|![User-GetAllJSON](https://user-images.githubusercontent.com/54795142/121515926-5f1ff600-c9f6-11eb-942b-09a447108e72.PNG)|
+
+|*`/api/Users/getall`*|
+|:--:|
+|![User-GetAll](https://user-images.githubusercontent.com/54795142/121516251-adcd9000-c9f6-11eb-9c9e-3c607b7a2000.PNG)|
+
+|*`/api/Users/getallsorted-asc`*|
+|:--:|
+|![User-GetAllASC](https://user-images.githubusercontent.com/54795142/121516320-bf169c80-c9f6-11eb-8019-6880f4ef702e.PNG)|
+
+|*`/api/Users/getallsorted-desc`*|
+|:--:|
+|![User-GetAllDESC](https://user-images.githubusercontent.com/54795142/121516318-be7e0600-c9f6-11eb-822b-e85f8d69ad12.PNG)|
+
+### Contacts
+
+|*`/api/Contacts/getallbyuser`*|
+|:--:|
+|![Contact-GetAllByUser](https://user-images.githubusercontent.com/54795142/121516819-50860e80-c9f7-11eb-8f07-bff0f1b62589.PNG)|
+
+|*`/api/Contacts/getall`*|
+|:--:|
+|![Contact-GetAll](https://user-images.githubusercontent.com/54795142/121516818-50860e80-c9f7-11eb-9ce7-1a9ef5cd97ef.PNG)|
+
+|*`/api/Contacts/get`*|
+|:--:|
+|![Contact-Get](https://user-images.githubusercontent.com/54795142/121516816-4fed7800-c9f7-11eb-8aa9-14bf66d62bbf.PNG)|
