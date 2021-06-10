@@ -11,6 +11,7 @@ namespace Business.Abstract
     {
         Contact Get(int contactId);
         List<Contact> GetAll();
+        List<Contact> GetAllByUser(int userId);
         void Add(Contact contact);
         void Update(Contact contact);
         void Delete(Contact contact);

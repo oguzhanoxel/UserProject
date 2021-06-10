@@ -38,6 +38,11 @@ namespace Business.Concrete
             return _contactDal.GetAll();
         }
 
+        public List<Contact> GetAllByUser(int userId)
+        {
+            return _contactDal.GetAll(c => c.UserId == userId);
+        }
+
         public void Update(Contact contact)
         {
             _contactDal.Update(contact);

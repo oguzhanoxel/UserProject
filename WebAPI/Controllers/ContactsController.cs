@@ -26,6 +26,12 @@ namespace WebAPI.Controllers
             return _contactService.GetAll();
         }
 
+        [HttpGet("getallbyuser")]
+        public List<Contact> GetAllByUser(int userId)
+        {
+            return _contactService.GetAllByUser(userId);
+        }
+
         [HttpGet("get")]
         public Contact Get(int contactId)
         {
